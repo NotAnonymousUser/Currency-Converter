@@ -34,6 +34,11 @@ const userInput = await inquirer.prompt([
 const fromAmount = currencyRates[userInput.from];
 const toAmount = currencyRates[userInput.to];
 const amount = userInput.amount;
-let baseAmount = amount / fromAmount;
-const convertedAmount = baseAmount * toAmount;
-console.log(chalk.green(`${amount} ${userInput.from} is equal to ${convertedAmount} ${userInput.to}`));
+if (isNaN(userInput.amount)) {
+    console.log(chalk.red(`Error ! Cannot convert empty value.`));
+}
+else {
+    let baseAmount = amount / fromAmount;
+    const convertedAmount = baseAmount * toAmount;
+    console.log(chalk.green(`${amount} ${userInput.from} is equal to ${convertedAmount} ${userInput.to}`));
+}
