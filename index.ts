@@ -1,4 +1,6 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
+import chalk from "chalk";
 
 const currencyRates: any = {
   USD: 1,
@@ -16,19 +18,19 @@ const userInput = await inquirer.prompt([
   {
     name: "from",
     type: "list",
-    message: "Enter From Currency",
+    message: chalk.blue("Enter From Currency"),
     choices: ["USD", "EUR", "GBP", "CHF", "JPY", "KWD", "SAR", "INR", "PKR"],
   },
   {
     name: "to",
     type: "list",
-    message: "Enter To Currency",
+    message: chalk.blue("Enter To Currency"),
     choices: ["USD", "EUR", "GBP", "CHF", "JPY", "KWD", "SAR", "INR", "PKR"],
   },
   {
     name: "amount",
     type: "number",
-    message: "Enter The Amount You Want To Convert",
+    message: chalk.yellow("Enter The Amount You Want To Convert"),
   },
 ]);
 
@@ -40,5 +42,7 @@ let baseAmount = amount / fromAmount;
 const convertedAmount = baseAmount * toAmount;
 
 console.log(
-  `${amount} ${userInput.from} is equal to ${convertedAmount} ${userInput.to}`
+  chalk.green(
+    `${amount} ${userInput.from} is equal to ${convertedAmount} ${userInput.to}`
+  )
 );
