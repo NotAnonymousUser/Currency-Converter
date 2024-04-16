@@ -1,5 +1,5 @@
 # Currency-Converter
- 
+
 **Simple Currency Converter**
 
 This project offers a user-friendly, command-line currency converter for quick and efficient conversions on the go. Keep track of exchange rates and convert between various currencies with ease.
@@ -8,7 +8,6 @@ This project offers a user-friendly, command-line currency converter for quick a
 
 - **Core Functionality:** Convert between a wide range of currencies using predefined exchange rates.
 - **Simplicity:** The intuitive command-line interface makes it straightforward to use, even for those unfamiliar with technical tools.
-
 
 **Getting Started:**
 
@@ -23,7 +22,7 @@ This project offers a user-friendly, command-line currency converter for quick a
    ```
 4. **Run the Application:**
    ```bash
-   npm start
+   npx @muhammad-mubeen-javed/currency-converter
    ```
 
 **Using the Currency Converter:**
